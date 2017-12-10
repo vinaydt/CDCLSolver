@@ -8,8 +8,11 @@ Main.cpp
 
 Few implementation details -
 
-1. Place the .cnf file inside Debug folder - (CDCLAlgorithm/CDCLAlgorithm/Debug) and specify this - Debug/fiename.cnf as aegv[1] .
-2. True/False for argv[2] - This governs weather logs are to be printed or not. By default, logs are off.
+1. To load this project, please click on CDCLAlgorithm (VC++Project file). This would load the project onto Visual Studio.
+
+2. Place the .cnf file inside Debug folder - (CDCLAlgorithm/CDCLAlgorithm/Debug) and specify this - Debug/fiename.cnf as argv[1] .
+
+3. True/False for argv[2] - This governs weather logs are to be printed or not. By default, logs are off.
 
 And, TimeLimit has been set to 300s in main.cpp. If implementation takes more than TimeLimit macro, it "times out".
 
