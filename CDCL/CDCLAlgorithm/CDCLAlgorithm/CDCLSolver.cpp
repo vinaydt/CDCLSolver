@@ -235,36 +235,36 @@ void CDCLSolver :: unitPropagate(int d)
 
 int CDCLSolver :: analyzeLearn(int d)
 {
-    queue<int> bfs, temp;
+    queue<int> breadthFirstSearchVar, temp;
     int nodesAtHighestLevel = 0;
     int current;
     int secondHighestLevel = 0;
     vector<int> literals;
     for(auto it = thisImplicationGraph[-1].parentsOfThisNode.begin(); it != thisImplicationGraph[-1].parentsOfThisNode.end(); it++)
     {
-        bfs.push(*it);
+        breadthFirstSearchVar.push(*it);
         if(thisImplicationGraph[*it].d == d)
             nodesAtHighestLevel++;
     }
     while(nodesAtHighestLevel > 1)
     {
-        current = bfs.front();
-        bfs.pop();
+        current = breadthFirstSearchVar.front();
+        breadthFirstSearchVar.pop();
         if(thisImplicationGraph[current].d == d)
             nodesAtHighestLevel--;
         for(auto it = thisImplicationGraph[current].parentsOfThisNode.begin(); it != thisImplicationGraph[current].parentsOfThisNode.end(); it++)
         {
-            bfs.push(*it);
+            breadthFirstSearchVar.push(*it);
             if(thisImplicationGraph[*it].d == d)
                 nodesAtHighestLevel++;
             else if(thisImplicationGraph[*it].d > secondHighestLevel)
                 secondHighestLevel = thisImplicationGraph[*it].d;
         }
     }
-    while(!bfs.empty())
+    while(!breadthFirstSearchVar.empty())
     {
-        current = bfs.front();
-        bfs.pop();
+        current = breadthFirstSearchVar.front();
+        breadthFirstSearchVar.pop();
         if(find(literals.begin(), literals.end(), current) != literals.end() || find(literals.begin(), literals.end(), -1 * current) != literals.end())
             continue;
         if(thisImplicationGraph[current].value)
