@@ -1,0 +1,4 @@
+﻿  main.cpp
+d:\ucsd-ms\fall2017\cdcl-dpll-sat-solver-master\main.cpp(94): warning C4018: '<': signed/unsigned mismatch
+  CDCLAlgorithm.vcxproj -> D:\UCSD-MS\Fall2017\SAT\CDCL\CDCLAlgorithm\Debug\CDCLAlgorithm.exe
+  CDCLAlgorithm.vcxproj -> D:\UCSD-MS\Fall2017\SAT\CDCL\CDCLAlgorithm\Debug\CDCLAlgorithm.pdb (Partial PDB)
